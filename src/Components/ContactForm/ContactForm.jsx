@@ -4,6 +4,8 @@ import { FiSend } from "react-icons/fi";
 import Button from "../Button/Button";
 import styles from "./ContactForm.module.css";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xoeebzog";
+
 const initialFormData = {
   name: "",
   email: "",
@@ -61,27 +63,44 @@ function ContactForm() {
       [name]: "",
     }));
 
-    if (status !== "idle") {
-      setStatus("idle");
-    }
+    setStatus("idle");
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
 
-    const validationErrors = validateForm();
+    if (status === "sending") return;
 
+    const validationErrors = validateForm();
     setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length > 0) {
-      setStatus("error");
       return;
     }
 
-    // Frontend validation only.
-    // Connect a backend or email service before accepting messages.
+    setStatus("sending");
 
-    setStatus("validated");
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Message submission failed.");
+      }
+
+      setStatus("success");
+      setFormData(initialFormData);
+      setErrors({});
+    } catch (error) {
+      console.error("Contact form error:", error);
+      setStatus("submitError");
+    }
   }
 
   return (
@@ -106,15 +125,10 @@ function ContactForm() {
             maxLength={80}
             autoComplete="name"
             aria-invalid={Boolean(errors.name)}
-            aria-describedby={
-              errors.name ? "contact-name-error" : undefined
-            }
           />
 
           {errors.name && (
-            <p id="contact-name-error" className={styles.error}>
-              {errors.name}
-            </p>
+            <p className={styles.error}>{errors.name}</p>
           )}
         </div>
 
@@ -133,15 +147,10 @@ function ContactForm() {
             maxLength={254}
             autoComplete="email"
             aria-invalid={Boolean(errors.email)}
-            aria-describedby={
-              errors.email ? "contact-email-error" : undefined
-            }
           />
 
           {errors.email && (
-            <p id="contact-email-error" className={styles.error}>
-              {errors.email}
-            </p>
+            <p className={styles.error}>{errors.email}</p>
           )}
         </div>
 
@@ -159,15 +168,10 @@ function ContactForm() {
             onChange={handleChange}
             maxLength={120}
             aria-invalid={Boolean(errors.subject)}
-            aria-describedby={
-              errors.subject ? "contact-subject-error" : undefined
-            }
           />
 
           {errors.subject && (
-            <p id="contact-subject-error" className={styles.error}>
-              {errors.subject}
-            </p>
+            <p className={styles.error}>{errors.subject}</p>
           )}
         </div>
 
@@ -185,23 +189,15 @@ function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             aria-invalid={Boolean(errors.message)}
-            aria-describedby={
-              errors.message
-                ? "contact-message-error"
-                : "message-counter"
-            }
           />
 
           <div className={styles.messageFooter}>
             {errors.message ? (
-              <p
-                id="contact-message-error"
-                className={styles.error}
-              >
+              <p className={styles.error}>
                 {errors.message}
               </p>
             ) : (
-              <span id="message-counter" className={styles.counter}>
+              <span className={styles.counter}>
                 {formData.message.length}/2000 characters
               </span>
             )}
@@ -209,16 +205,17 @@ function ContactForm() {
         </div>
       </div>
 
-      {status === "error" && (
-        <p className={styles.errorMessage} role="alert">
-          Please correct the highlighted fields and try again.
+      {status === "success" && (
+        <p className={styles.infoMessage} role="status">
+          Your message has been sent successfully!
+          I'll get back to you soon.
         </p>
       )}
 
-      {status === "validated" && (
-        <p className={styles.infoMessage} role="status">
-          Your information is valid, but message delivery is not
-          configured yet. Please contact me through my listed email.
+      {status === "submitError" && (
+        <p className={styles.errorMessage} role="alert">
+          Sorry, your message could not be sent.
+          Please try again or email me directly.
         </p>
       )}
 
@@ -229,7 +226,7 @@ function ContactForm() {
           size="large"
           icon={<FiSend size={17} />}
         >
-          Validate Message
+          {status === "sending" ? "Sending..." : "Send Message"}
         </Button>
       </div>
     </form>
