@@ -31,11 +31,11 @@ const socialItems = [
     label: "Visit my Facebook profile",
   },
   {
-    name: "Email",
-    icon: FiMail,
-    url: "mailto:your-email@example.com",
-    label: "Send me an email",
-  },
+  name: "Email",
+  icon: FiMail,
+  url: "mailto:nabeelahmadtk550@gmail.com",
+  label: "Send me an email",
+},
 ];
 
 function SocialLinks({
