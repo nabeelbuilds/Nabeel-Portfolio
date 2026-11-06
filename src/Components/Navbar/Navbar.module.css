@@ -1,0 +1,405 @@
+
+/* ==============================
+   NAVBAR HEADER
+============================== */
+
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.navbar {
+  width: 100%;
+  position: relative;
+}
+
+.container {
+  max-width: 1240px;
+  min-height: 84px;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* ==============================
+   BRAND LOGO
+============================== */
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  flex-shrink: 0;
+}
+
+.logoName {
+  color: var(--color-text-primary);
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  line-height: 1.2;
+}
+
+.logoName span {
+  color: var(--color-primary);
+}
+
+.logoLabel {
+  color: var(--color-text-light);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-top: 3px;
+}
+
+/* ==============================
+   DESKTOP NAVIGATION
+============================== */
+
+.desktopNavigation {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.navLink {
+  position: relative;
+  padding: 10px 0;
+  color: var(--color-text-secondary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: color var(--transition-normal);
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 0;
+  height: 2px;
+  border-radius: 5px;
+  background: var(--color-primary);
+  transition: width var(--transition-normal);
+}
+
+.navLink:hover,
+.activeLink {
+  color: var(--color-primary);
+}
+
+.navLink:hover::after,
+.activeLink::after {
+  width: 100%;
+}
+
+/* ==============================
+   CONTACT BUTTON
+============================== */
+
+.contactButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 12px 21px;
+  border-radius: var(--radius-full);
+
+  color: #ffffff;
+  background: var(--color-primary);
+
+  font-size: 0.88rem;
+  font-weight: 600;
+
+  transition:
+    background var(--transition-normal),
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.contactButton:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(99, 91, 255, 0.2);
+}
+
+/* ==============================
+   MOBILE MENU BUTTON
+============================== */
+
+.menuButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  color: var(--color-text-primary);
+  background: var(--color-background-secondary);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  transition:
+    color var(--transition-normal),
+    background var(--transition-normal);
+}
+
+.menuButton:hover {
+  color: var(--color-primary);
+  background: var(--color-background-tertiary);
+}
+
+/* ==============================
+   MOBILE NAVIGATION
+============================== */
+
+.mobileNavigation {
+  display: none;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+@media (max-width: 900px) {
+  .container {
+    min-height: 76px;
+    padding: 0 24px;
+  }
+
+  .desktopNavigation {
+    gap: 20px;
+  }
+
+  .navLink {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    min-height: 72px;
+    padding: 0 20px;
+  }
+
+  .desktopNavigation,
+  .contactButton {
+    display: none;
+  }
+
+  .menuButton {
+    display: flex;
+    position: relative;
+    z-index: 1002;
+  }
+
+  .mobileNavigation {
+    display: block;
+    position: fixed;
+    top: 72px;
+    left: 0;
+
+    width: 100%;
+    height: calc(100dvh - 72px);
+
+    background: var(--color-background);
+    overflow-y: auto;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-12px);
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s ease;
+  }
+
+  .mobileNavigationOpen {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .mobileNavigationInner {
+    max-width: 600px;
+    min-height: 100%;
+    margin: 0 auto;
+    padding: 35px 25px 25px;
+
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Mobile Heading */
+
+  .mobileNavigationHeading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    color: var(--color-text-light);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+  }
+
+  .mobileNavigationLine {
+    flex: 1;
+    height: 1px;
+    background: var(--color-border);
+  }
+
+  /* Mobile Links */
+
+  .mobileLinks {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobileLink {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 19px 0;
+
+    color: var(--color-text-primary);
+    font-size: clamp(1.35rem, 5vw, 1.8rem);
+    font-weight: 600;
+    letter-spacing: -0.7px;
+
+    border-bottom: 1px solid var(--color-border);
+
+    opacity: 0;
+    transform: translateY(12px);
+
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease,
+      color var(--transition-normal);
+  }
+
+  .mobileNavigationOpen .mobileLink {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mobileLink > svg {
+    margin-left: auto;
+    color: var(--color-text-light);
+    transition:
+      color var(--transition-normal),
+      transform var(--transition-normal);
+  }
+
+  .mobileLink:hover,
+  .mobileActiveLink {
+    color: var(--color-primary);
+  }
+
+  .mobileLink:hover > svg {
+    color: var(--color-primary);
+    transform: translate(3px, -3px);
+  }
+
+  .mobileLinkNumber {
+    color: var(--color-text-light);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  /* Mobile Footer */
+
+  .mobileNavigationFooter {
+    margin-top: auto;
+    padding-top: 45px;
+  }
+
+  .mobileNavigationFooter p {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+  }
+
+  .mobileContactButton {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 17px 20px;
+
+    color: #ffffff;
+    background: var(--color-primary);
+
+    border-radius: var(--radius-md);
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    transition: background var(--transition-normal);
+  }
+
+  .mobileContactButton:hover {
+    background: var(--color-primary-dark);
+  }
+
+  .mobileCopyright {
+    display: block;
+    margin-top: 30px;
+
+    color: var(--color-text-light);
+    font-size: 0.75rem;
+    text-align: center;
+  }
+}
+
+/* ==============================
+   SMALL MOBILE DEVICES
+============================== */
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .logoName {
+    font-size: 1.5rem;
+  }
+
+  .mobileNavigationInner {
+    padding-inline: 20px;
+  }
+}
+
+/* ==============================
+   REDUCED MOTION
+============================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .mobileNavigation,
+  .mobileLink,
+  .navLink,
+  .contactButton {
+    transition: none;
+  }
+}

@@ -1,0 +1,94 @@
+
+.heading {
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.left {
+  text-align: left;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 16px;
+
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.eyebrowDot {
+  width: 7px;
+  height: 7px;
+
+  background-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+.title {
+  max-width: 750px;
+  margin: 0 auto 16px;
+
+  color: var(--color-text);
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+}
+
+.left .title {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.description {
+  max-width: 620px;
+  margin: 0 auto;
+
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.left .description {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  .heading {
+    margin-bottom: 36px;
+  }
+
+  .title {
+    font-size: clamp(28px, 6vw, 36px);
+    letter-spacing: -1px;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    margin-bottom: 30px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 1.4px;
+  }
+}

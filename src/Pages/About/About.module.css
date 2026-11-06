@@ -1,0 +1,578 @@
+
+.about {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Page hero */
+
+.pageHero {
+  padding: 65px 0 85px;
+  background-color: var(--color-background-secondary);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  margin-bottom: 65px;
+
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.breadcrumb a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.heroContent {
+  max-width: 760px;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 17px;
+
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.heroContent h1 {
+  margin: 0 0 20px;
+
+  color: var(--color-text);
+  font-size: clamp(42px, 6vw, 65px);
+  font-weight: 750;
+  line-height: 1.12;
+  letter-spacing: -2.5px;
+}
+
+.heroContent h1 span {
+  color: var(--color-primary);
+}
+
+.heroContent p {
+  max-width: 620px;
+  margin: 0;
+
+  color: var(--color-text-secondary);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* Introduction */
+
+.introduction {
+  background-color: var(--color-background);
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: 90px;
+}
+
+.profileVisual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 420px;
+}
+
+.profileCard {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  max-width: 340px;
+  padding: 45px 30px;
+
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+
+.profileInitials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 125px;
+  height: 125px;
+  margin-bottom: 25px;
+
+  background-image: url("/Images/nabeel-profile.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+
+
+.profileName {
+  margin-bottom: 8px;
+
+  color: var(--color-text);
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.profileRole {
+  color: var(--color-text-secondary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-align: center;
+}
+
+.profileDivider {
+  width: 100%;
+  height: 1px;
+  margin: 25px 0;
+
+  background-color: var(--color-border);
+}
+
+.profileDetails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+}
+
+.profileDetails span {
+  padding: 8px 12px;
+
+  color: var(--color-primary);
+  background-color: rgba(99, 91, 255, 0.08);
+  border-radius: var(--radius-full);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.profileDecoration {
+  position: absolute;
+  top: 45px;
+  right: 10px;
+
+  width: 180px;
+  height: 180px;
+
+  background-color: rgba(99, 91, 255, 0.08);
+  border-radius: 50%;
+}
+
+.introContent h2 {
+  margin: 0 0 22px;
+
+  color: var(--color-text);
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.25;
+  letter-spacing: -1.3px;
+}
+
+.introContent h2 span {
+  color: var(--color-primary);
+}
+
+.introContent p {
+  margin-bottom: 17px;
+
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.introContent button {
+  margin-top: 12px;
+}
+
+/* Highlights */
+
+.highlights {
+  padding: 50px 0;
+
+  background-color: var(--color-primary);
+}
+
+.highlightsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.highlightItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 9px;
+}
+
+.highlightNumber {
+  color: #ffffff;
+  font-size: 38px;
+  font-weight: 750;
+  line-height: 1;
+}
+
+.highlightLabel {
+  max-width: 220px;
+
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Skills */
+
+.skillsSection {
+  background-color: var(--color-background);
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Strengths */
+
+.strengthsSection {
+  background-color: var(--color-background-secondary);
+}
+
+.strengthsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
+.strengthsContent h2 {
+  margin: 0 0 18px;
+
+  color: var(--color-text);
+  font-size: clamp(30px, 4vw, 42px);
+  line-height: 1.25;
+  letter-spacing: -1.2px;
+}
+
+.strengthsContent h2 span {
+  color: var(--color-primary);
+}
+
+.strengthsContent p {
+  margin-bottom: 25px;
+
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+
+  transition: gap var(--transition-normal);
+}
+
+.textLink:hover {
+  gap: 13px;
+}
+
+.strengthsList {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+
+  padding: 30px;
+
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.strengthItem {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.strengthItem svg {
+  flex-shrink: 0;
+  color: var(--color-accent);
+}
+
+/* Principles */
+
+.principlesSection {
+  background-color: var(--color-background);
+}
+
+.principlesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.principleCard {
+  padding: 27px 23px;
+
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+.principleCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(99, 91, 255, 0.3);
+  box-shadow: var(--shadow-md);
+}
+
+.principleIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 53px;
+  height: 53px;
+  margin-bottom: 23px;
+
+  color: var(--color-primary);
+  background-color: rgba(99, 91, 255, 0.09);
+  border-radius: var(--radius-md);
+}
+
+.principleCard h3 {
+  margin-bottom: 12px;
+
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.principleCard p {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* CTA */
+
+.ctaSection {
+  padding-top: 65px;
+  padding-bottom: 65px;
+
+  background-color: var(--color-background-secondary);
+}
+
+.ctaContainer {
+  padding: 65px 30px;
+
+  background-color: var(--color-primary);
+  border-radius: var(--radius-xl);
+
+  text-align: center;
+}
+
+.ctaContainer > span {
+  display: inline-block;
+  margin-bottom: 18px;
+
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+}
+
+.ctaContainer h2 {
+  margin: 0 0 17px;
+
+  color: #ffffff;
+  font-size: clamp(34px, 5vw, 49px);
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+}
+
+.ctaContainer p {
+  max-width: 550px;
+  margin: 0 auto 28px;
+
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .introGrid {
+    gap: 45px;
+  }
+
+  .strengthsGrid {
+    gap: 40px;
+  }
+
+  .skillsGrid,
+  .principlesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .pageHero {
+    padding: 45px 0 60px;
+  }
+
+  .breadcrumb {
+    margin-bottom: 45px;
+  }
+
+  .heroContent h1 {
+    font-size: 45px;
+  }
+
+  .heroContent p {
+    font-size: 14px;
+  }
+
+  .introGrid,
+  .strengthsGrid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .profileVisual {
+    min-height: 360px;
+  }
+
+  .introContent h2,
+  .strengthsContent h2 {
+    font-size: 34px;
+  }
+
+  .highlightsGrid {
+    gap: 15px;
+  }
+
+  .highlightNumber {
+    font-size: 31px;
+  }
+
+  .highlightLabel {
+    font-size: 11px;
+  }
+
+  .principlesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .heroContent h1 {
+    font-size: 37px;
+    letter-spacing: -1.5px;
+  }
+
+  .profileCard {
+    max-width: 300px;
+    padding: 35px 22px;
+  }
+
+  .profileInitials {
+    width: 105px;
+    height: 105px;
+    font-size: 33px;
+  }
+
+  .highlights {
+    padding: 35px 0;
+  }
+
+  .highlightsGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .highlightNumber {
+    font-size: 34px;
+  }
+
+  .skillsGrid,
+  .principlesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .strengthsList {
+    padding: 23px 18px;
+  }
+
+  .strengthItem {
+    align-items: flex-start;
+    font-size: 13px;
+  }
+
+  .ctaContainer {
+    padding: 45px 20px;
+  }
+
+  .ctaContainer h2 {
+    font-size: 34px;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .textLink,
+  .principleCard {
+    transition: none;
+  }
+
+  .textLink:hover,
+  .principleCard:hover {
+    transform: none;
+  }
+}

@@ -1,0 +1,406 @@
+
+.services {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Page hero */
+
+.pageHero {
+  padding: 65px 0 85px;
+  background-color: var(--color-background-secondary);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 65px;
+
+  color: var(--color-text-secondary);
+  font-size: 13px;
+}
+
+.breadcrumb a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.heroContent {
+  max-width: 800px;
+}
+
+.eyebrow,
+.ctaEyebrow {
+  display: inline-block;
+  margin-bottom: 17px;
+
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.heroContent h1 {
+  margin: 0 0 20px;
+
+  color: var(--color-text);
+  font-size: clamp(42px, 6vw, 65px);
+  font-weight: 750;
+  line-height: 1.12;
+  letter-spacing: -2.5px;
+}
+
+.heroContent h1 span {
+  color: var(--color-primary);
+}
+
+.heroContent p {
+  max-width: 650px;
+  margin: 0 0 28px;
+
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Main services */
+
+.mainServices {
+  background-color: var(--color-background);
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* Additional services */
+
+.additionalSection {
+  padding: 90px 0;
+  background-color: var(--color-background-secondary);
+}
+
+.additionalGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.additionalCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+
+  padding: 25px;
+
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  transition:
+    transform var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+.additionalCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+}
+
+.additionalIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 48px;
+  height: 48px;
+
+  color: var(--color-primary);
+  background-color: rgba(99, 91, 255, 0.09);
+  border-radius: var(--radius-md);
+}
+
+.additionalCard h3 {
+  margin: 2px 0 9px;
+
+  color: var(--color-text);
+  font-size: 16px;
+}
+
+.additionalCard p {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  margin-left: auto;
+
+  color: var(--color-accent);
+}
+
+/* Development process */
+
+.processSection {
+  background-color: var(--color-background);
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.processCard {
+  padding: 25px;
+
+  background-color: var(--color-background-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.processTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.processTop > span {
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.processIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  color: var(--color-primary);
+  background-color: var(--color-background);
+  border-radius: var(--radius-md);
+}
+
+.processCard h3 {
+  margin: 0 0 11px;
+
+  color: var(--color-text);
+  font-size: 17px;
+}
+
+.processCard p {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* FAQ */
+
+.faqSection {
+  padding: 90px 0;
+  background-color: var(--color-background-secondary);
+}
+
+.faqList {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.faqItem {
+  margin-bottom: 13px;
+  padding: 21px 24px;
+
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.faqItem summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  color: var(--color-text);
+  font-size: 15px;
+  font-weight: 650;
+
+  cursor: pointer;
+  list-style: none;
+}
+
+.faqItem summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqPlus {
+  flex-shrink: 0;
+
+  color: var(--color-primary);
+  font-size: 24px;
+  font-weight: 400;
+
+  transition: transform var(--transition-normal);
+}
+
+.faqItem[open] .faqPlus {
+  transform: rotate(45deg);
+}
+
+.faqItem p {
+  margin: 16px 30px 0 0;
+  padding-top: 15px;
+
+  color: var(--color-text-secondary);
+  border-top: 1px solid var(--color-border);
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* CTA */
+
+.ctaSection {
+  padding: 75px 0;
+  background-color: var(--color-background);
+}
+
+.ctaContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+
+  padding: 45px;
+
+  background-color: var(--color-background-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+}
+
+.ctaContainer > div {
+  max-width: 620px;
+}
+
+.ctaEyebrow {
+  margin-bottom: 12px;
+}
+
+.ctaContainer h2 {
+  margin: 0 0 13px;
+
+  color: var(--color-text);
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.3;
+}
+
+.ctaContainer p {
+  margin: 0;
+
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .processGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .pageHero {
+    padding: 45px 0 60px;
+  }
+
+  .breadcrumb {
+    margin-bottom: 45px;
+  }
+
+  .heroContent h1 {
+    font-size: 45px;
+  }
+
+  .heroContent p {
+    font-size: 14px;
+  }
+
+  .additionalSection,
+  .faqSection {
+    padding: 65px 0;
+  }
+
+  .servicesGrid,
+  .additionalGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaContainer {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 520px) {
+  .heroContent h1 {
+    font-size: 37px;
+    letter-spacing: -1.5px;
+  }
+
+  .processGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .processCard {
+    padding: 22px;
+  }
+
+  .faqItem {
+    padding: 18px;
+  }
+
+  .faqItem summary {
+    font-size: 14px;
+  }
+
+  .ctaContainer {
+    padding: 25px 20px;
+  }
+
+  .ctaContainer h2 {
+    font-size: 25px;
+  }
+
+  .ctaContainer > a {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .additionalCard,
+  .faqPlus {
+    transition: none;
+  }
+}
