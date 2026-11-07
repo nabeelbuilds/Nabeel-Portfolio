@@ -169,7 +169,7 @@ function Footer() {
                 className={styles.emailLink}
               >
                 <FiMail size={16} />
-                your-email@example.com
+                nabeelahmadtk550@gmail.com
               </a>
             </div>
 
