@@ -9,7 +9,6 @@ import {
   FiClock,
 } from "react-icons/fi";
 
-
 import ContactForm from "../../Components/ContactForm/ContactForm";
 import SocialLinks from "../../Components/SocialLinks/SocialLinks";
 
@@ -17,18 +16,20 @@ import styles from "./Contact.module.css";
 
 const contactOptions = [
   {
-  icon: FiMail,
-  title: "Email",
-  description: "For project inquiries and professional communication.",
-  value: "nabeelahmadtk550@gmail.com",
-  href: "mailto:nabeelahmadtk550@gmail.com?subject=Project%20Inquiry&body=Hello,%20I%20would%20like%20to%20discuss%20a%20project.",
-},
+    icon: FiMail,
+    title: "Email",
+    description: "For project inquiries and professional communication.",
+    value: "nabeelahmadtk550@gmail.com",
+    href: "mailto:nabeelahmadtk550@gmail.com?subject=Project%20Inquiry",
+    type: "email",
+  },
   {
     icon: FiBriefcase,
     title: "Freelance Projects",
     description: "Have a website idea or frontend development requirement?",
     value: "Let's discuss your project",
     href: "#contact-form",
+    type: "internal",
   },
   {
     icon: FiMessageCircle,
@@ -36,6 +37,7 @@ const contactOptions = [
     description: "Connect with me through my professional profiles.",
     value: "Explore my social links",
     href: "#social-links",
+    type: "internal",
   },
 ];
 
@@ -98,6 +100,11 @@ function Contact() {
                       className={styles.contactOption}
                       href={option.href}
                       key={option.title}
+                      aria-label={
+                        option.type === "email"
+                          ? `Send an email to ${option.value}`
+                          : option.title
+                      }
                     >
                       <div className={styles.optionIcon}>
                         <Icon size={21} />
@@ -117,6 +124,7 @@ function Contact() {
                 })}
               </div>
 
+              {/* Availability */}
               <div className={styles.availabilityCard}>
                 <div className={styles.availabilityIcon}>
                   <FiClock size={19} />
@@ -132,6 +140,7 @@ function Contact() {
                 </div>
               </div>
 
+              {/* Social Links */}
               <div
                 className={styles.socialSection}
                 id="social-links"
