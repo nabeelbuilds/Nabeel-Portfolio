@@ -96,16 +96,19 @@ function Contact() {
                   const Icon = option.icon;
 
                   return (
-                    <a
+                  <a
                       className={styles.contactOption}
                       href={option.href}
+                      target={option.type === "email" ? "_blank" : undefined}
+                      rel={option.type === "email" ? "noopener noreferrer" : undefined}
                       key={option.title}
                       aria-label={
-                        option.type === "email"
-                          ? `Send an email to ${option.value}`
-                          : option.title
+                      option.type === "email"
+                      ? `Send an email to ${option.value}`
+                      : option.title
                       }
-                    >
+                      >
+                    
                       <div className={styles.optionIcon}>
                         <Icon size={21} />
                       </div>

@@ -31,11 +31,11 @@ const socialItems = [
     label: "Visit my Facebook profile",
   },
   {
-  name: "Email",
-  icon: FiMail,
-  url: "mailto:nabeelahmadtk550@gmail.com",
-  label: "Send me an email",
-},
+    name: "Email",
+    icon: FiMail,
+    url: "mailto:nabeelahmadtk550@gmail.com?subject=Project%20Inquiry",
+    label: "Send me an email",
+  },
 ];
 
 function SocialLinks({
@@ -49,7 +49,6 @@ function SocialLinks({
     >
       {socialItems.map((item) => {
         const Icon = item.icon;
-        const isEmail = item.name === "Email";
 
         return (
           <a
@@ -58,8 +57,8 @@ function SocialLinks({
             className={styles.socialLink}
             aria-label={item.label}
             title={item.name}
-            target={isEmail ? undefined : "_blank"}
-            rel={isEmail ? undefined : "noopener noreferrer"}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <Icon size={19} />
 
