@@ -20,8 +20,8 @@ const contactOptions = [
     icon: FiMail,
     title: "Email",
     description: "For project inquiries and professional communication.",
-    value: "your-email@example.com",
-    href: "mailto:your-email@example.com",
+    value: "nabeelahmadtk550@gmail.com",
+    href: "mailto:nabeelahmadtk550@gmail.com",
   },
   {
     icon: FiBriefcase,
