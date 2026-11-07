@@ -165,10 +165,12 @@ function Footer() {
               </Link>
 
               <a
-                href="mailto:your-email@example.com"
-                className={styles.emailLink}
-              >
-                <FiMail size={16} />
+                  href="mailto:nabeelahmadtk550@gmail.com?subject=Project%20Inquiry"
+                  className={styles.emailLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+              <FiMail size={16} />
                 nabeelahmadtk550@gmail.com
               </a>
             </div>
