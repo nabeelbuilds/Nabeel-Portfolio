@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://buildwithnabeel.netlify.app/sitemap.xml
