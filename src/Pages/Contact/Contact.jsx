@@ -17,12 +17,12 @@ import styles from "./Contact.module.css";
 
 const contactOptions = [
   {
-    icon: FiMail,
-    title: "Email",
-    description: "For project inquiries and professional communication.",
-    value: "nabeelahmadtk550@gmail.com",
-    href: "mailto:nabeelahmadtk550@gmail.com",
-  },
+  icon: FiMail,
+  title: "Email",
+  description: "For project inquiries and professional communication.",
+  value: "nabeelahmadtk550@gmail.com",
+  href: "mailto:nabeelahmadtk550@gmail.com?subject=Project%20Inquiry&body=Hello,%20I%20would%20like%20to%20discuss%20a%20project.",
+},
   {
     icon: FiBriefcase,
     title: "Freelance Projects",
